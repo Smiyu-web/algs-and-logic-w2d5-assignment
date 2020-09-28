@@ -8,15 +8,15 @@ const isPrime = function(num) {
       if (num % i === 0) {
         return false
       }
-      if (i + 1 === num) {
-        return true
-      }
     }
+    return true
   }
 }
 
+
+
 console.log(isPrime(3));
-console.log(isPrime(5));
+console.log(isPrime(4));
 console.log(isPrime(8));
 console.log(isPrime(16));
 console.log(isPrime(21));

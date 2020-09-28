@@ -2,13 +2,24 @@
 // you can use the Sieve of Eratosthenes method to do this. 
 
 const primeGenerator = function(n) {
-  
+  let nums = [];
+  let primes = [];
+
+  for (let i = 2; i < n; i++) {
+      nums.push(i)
+  }
+
+  let sqrt = Math.sqrt(n);
+  while(nums[0] <= sqrt){
+      let prime = nums.shift()
+      primes.push(prime);
+      nums = nums.filter(function(num){
+          return num%prime != 0
+      })
+  }
+  return primes.concat(nums)
 }
 
 
-console.log(primeGenerator(3));
-console.log(primeGenerator(5));
-console.log(primeGenerator(7));
-console.log(primeGenerator(8));
-console.log(primeGenerator(16));
-console.log(primeGenerator(21));
+console.log(primeGenerator(50));
+console.log(primeGenerator(100));
